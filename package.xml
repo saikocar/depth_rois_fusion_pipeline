@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>depth_rois_fusion_pipeline</name>
+  <version>0.1.0</version>
+  <description>Launch integration for depth_rois_fusion pipeline</description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+   <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>depth_rois_fusion</exec_depend>
+  <exec_depend>object_on_lanelet_checker</exec_depend>
+  <exec_depend>objects_filter</exec_depend>
+
+</package>

@@ -1,0 +1,27 @@
+depth_rois_fusion_node:
+  ros__parameters:
+    pointcloud_topic: "/sensing/lidar/concatenated/pointcloud"
+    camera_info_topic: "/sensing/camera/roscube/front_wide/camera_info"
+    rois_topic: "/perception/object_recognition/detection/rois0"
+    depth_image_topic: "/camera/depth_image"
+    depth_rois_image_topic: "/camera/depth_rois_image"
+    out_camera_info_topic: "/camera/camera_info"
+    rectangle_color: [0, 255, 0]
+    text_color: [255, 0, 0]
+    rois_depth_msg_topic: "/camera/rois_depth"
+    depth_rois_marker_topic: "/camera/rois_depth_marker"
+  
+object_on_lanelet_checker:
+  ros__parameters:
+    map_topic: "/map/vector_map"
+    route_topic: "/planning/mission_planning/route"
+    input_objects_topic: "/camera/rois_depth"
+    output_objects_topic: "/objects_on_route_preprocess"
+    marker_topic: "/objects_on_route_marker"
+    
+object_filter_node:
+  ros__parameters:
+    input_topic: "/objects_on_route_preprocess"
+    output_topic: "/objects_on_route"
+    excluded_labels: [0]
+
